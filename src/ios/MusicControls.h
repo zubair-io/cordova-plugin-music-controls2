@@ -13,7 +13,10 @@
 #import <MediaPlayer/MPNowPlayingInfoCenter.h>
 #import <MediaPlayer/MPMediaItem.h>
 
-@interface MusicControls : CDVPlugin {}
+@interface MusicControls : CDVPlugin
+{
+  bool _didRegister;
+}
 
 @property NSString * latestEventCallbackId;
 
@@ -22,12 +25,11 @@
 - (void) updateElapsed: (CDVInvokedUrlCommand *) command;
 - (void) destroy: (CDVInvokedUrlCommand *) command;
 - (void) watch: (CDVInvokedUrlCommand *) command;
-- (void) remoteEvent:(MPRemoteCommandEvent *) event;
+- (MPRemoteCommandHandlerStatus) remoteEvent:(MPRemoteCommandEvent *)event;
 - (void) skipForwardEvent: (MPSkipIntervalCommandEvent *) event;
 - (void) skipBackwardEvent: (MPSkipIntervalCommandEvent *) event;
 - (MPMediaItemArtwork *) createCoverArtwork: (NSString *) coverUri;
 - (bool) isCoverImageValid: (UIImage *) image;
-- (void) handleMusicControlsNotification:(NSNotification *) notification;
 - (void) registerMusicControlsEventListener;
 - (void) deregisterMusicControlsEventListener;
 
