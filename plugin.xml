@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"
-	id="cordova-music-controls"
-	version="2.2.1">
-	<name>MusicControls</name>
+	id="cordova-plugin-music-controls2"
+	version="3.0.3">
+	<name>Music Controls</name>
 	<keywords>cordova,music,controller,controls,media,plugin,notification,lockscreen,now,playing</keywords>
-	<repo>https://github.com/yoojene/cordova-music-controls</repo>
+	<repo>https://github.com/ghenry22/cordova-plugin-music-controls2</repo>
 	<description>Music controls for Cordova apps</description>
 	<license>MIT</license>
-	<author>HomerOurs</author>
+	<author>ghenry22</author>
 
 	<engines>
-		<engine name="cordova" version=">=3.4.0"/>
+		<engine name="cordova" version=">=4.0.0"/>
 	</engines>
 
 	<asset src="www/MusicControls.js" target="js/MusicControls.js"/>
@@ -29,6 +29,10 @@
 
 		<config-file target="AndroidManifest.xml" parent="/*">
 			<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+			<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/> 
+			<uses-permission android:name="android.permission.BLUETOOTH"/>
+			<uses-permission android:name="android.permission.WAKE_LOCK" />
+			<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 		</config-file>
 
 		<config-file target="AndroidManifest.xml" parent="/manifest/application">
